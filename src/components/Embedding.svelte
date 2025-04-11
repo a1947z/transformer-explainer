@@ -76,13 +76,22 @@
 			duration: 0.5,
 			ease: 'power2.inOut'
 		});
-		gsap.to('.embedding-detail', {
-			opacity: 1,
-			duration: 0.5,
-			delay: 0.5
-		});
+
+		if (document.querySelector('.embedding-detail')) {
+			gsap.to('.embedding-detail', {
+				opacity: 1,
+				duration: 0.5,
+				delay: 0.5
+			});
+		}
 
 		startTime = performance.now();
+
+		// Ensure dataLayer is defined
+		if (!window.dataLayer) {
+			window.dataLayer = [];
+		}
+
 		window.dataLayer.push({
 			event: 'visibility-show',
 			visible_name: 'embedding-expansion',
@@ -93,6 +102,11 @@
 	const collapseEmbedding = async () => {
 		let endTime = performance.now();
 		let visibleDuration = endTime - startTime;
+
+		// Ensure dataLayer is defined
+		if (!window.dataLayer) {
+			window.dataLayer = [];
+		}
 
 		window.dataLayer.push({
 			event: 'visibility-hide',

@@ -104,8 +104,7 @@ export const isMobile = readable(detectDevice());
 
 function detectDevice() {
     if (typeof window === 'undefined' || typeof navigator === 'undefined') {
-        // 如果在 SSR 环境中，返回一个默认值
-        return false;
+        return false; // 默认值，非浏览器环境
     }
     const userAgent = navigator.userAgent.toLowerCase();
     return /android|iphone|ipad|ipod/i.test(userAgent);
