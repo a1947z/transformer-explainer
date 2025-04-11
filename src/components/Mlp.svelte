@@ -36,7 +36,20 @@
 		role="group"
 		data-click="mlp-step-title"
 	>
-		<div class="w-max" on:click={(e) => onClickReadMore(e, 'article-activation')}>MLP</div>
+			<div
+				class="w-max"
+				role="button" 
+				tabindex="0" 
+				on:click={(e) => onClickReadMore(e, 'article-activation')}
+				on:keydown={(e) => {
+					if (e.key === 'Enter' || e.key === ' ') {
+						e.preventDefault();
+						onClickReadMore(e, 'article-activation');
+					}
+				}}
+			>
+				MLP
+			</div>
 	</div>
 	<div class="content relative">
 		<div class="bounding mlp-bounding" class:active={isHovered}></div>

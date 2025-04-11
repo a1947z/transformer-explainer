@@ -219,7 +219,7 @@
 			<h4>Step 1: Query, Key, and Value Matrices</h4>
 
 			<div class="figure pt-10">
-				<img src="./article_assets/QKV.png" width="80%" />
+				<img src="./article_assets/QKV.png" width="80%" alt="alt"/>
 				<div class="text-xs">
 					<Katex
 						displayMode
@@ -286,7 +286,7 @@
 			</p>
 
 			<div class="figure">
-				<img src="./article_assets/attention.png" width="80%" align="middle" />
+				<img src="./article_assets/attention.png" width="80%" align="middle" alt="alt" />
 			</div>
 			<div class="figure-caption">
 				Figure <span class="attention">3</span>. Using Query, Key, and Value matrices to calculate
@@ -330,7 +330,7 @@
 		<h3>MLP: Multi-Layer Perceptron</h3>
 
 		<div class="figure">
-			<img src="./article_assets/mlp.png" width="70%" align="middle" />
+			<img src="./article_assets/mlp.png" width="70%" align="middle" alt="alt" />
 		</div>
 		<div class="figure-caption">
 			Figure <span class="attention">4</span>. Using MLP layer to project the self-attention
@@ -364,7 +364,7 @@
 		</p>
 
 		<div class="figure py-5">
-			<img src="./article_assets/softmax.png" width="70%" />
+			<img src="./article_assets/softmax.png" width="70%" alt="alt" />
 		</div>
 		<div class="figure-caption">
 			Figure <span class="attention">5</span>. Each token in the vocabulary is assigned a
