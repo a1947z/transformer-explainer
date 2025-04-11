@@ -59,7 +59,7 @@
 
 	// Fetch model onnx
 	const fetchModel = async () => {
-		const chunkNum = 63; //TODO: move to model meta
+		const chunkNum = 63; // TODO: move to model meta
 		const chunkUrls = Array(chunkNum)
 			.fill(0)
 			.map((d, i) => `${base}/model-v2/gpt2.onnx.part${i}`);
@@ -82,6 +82,12 @@
 
 		isFetchingModel.set(false);
 
+		// Ensure dataLayer is defined
+		if (!window.dataLayer) {
+			window.dataLayer = [];
+		}
+
+		// Push event to dataLayer
 		window.dataLayer.push({
 			event: `model-loaded`,
 			use_cache: hasCache

@@ -29,20 +29,20 @@
 		event: Event,
 		data: any,
 		el?: SVGRectElement | d3.BaseType
-	) => void | undefined;
+	) => void | undefined = () => {};
 	export let onMouseOutSvg: (
 		event: Event,
 		data: any,
 		el?: SVGRectElement | d3.BaseType
-	) => void | undefined;
+	) => void | undefined = () => {};
 	export let showTooltip: (
 		event: Event,
 		data: any,
 		el: SVGRectElement | d3.BaseType
 	) => string | undefined;
 
-	export let highlightRow: number | undefined;
-	export let highlightCol: number | undefined;
+	export let highlightRow: number | undefined = undefined;
+	export let highlightCol: number | undefined = undefined;
 
 	let rowLen: number = 0;
 	let dimension: number = 0;
