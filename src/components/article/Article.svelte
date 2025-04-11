@@ -107,7 +107,7 @@
 			embedding. Let’s see how each of these steps is done.
 		</p>
 		<div class="figure">
-			<img src="./article_assets/embedding.png" width="65%" />
+			<img src="./article_assets/embedding.png" alt="Visualization of embedding process" width="65%" />
 		</div>
 		<div class="figure-caption">
 			Figure <span class="attention">1</span>. Expanding the Embedding layer view, showing how the
@@ -156,9 +156,6 @@
 	<p>
 	  Each position in a sequence is assigned a unique mathematical
 	  representation using a combination of sine and cosine functions.
-
-	  For a given position, the sine function represents even dimensions,
-	  and the cosine function represents odd dimensions within the positional encoding vector.
 
 	  This periodic nature ensures that each position has a consistent encoding,
 	  independent of the surrounding context.
@@ -507,18 +504,6 @@
 		</ul>
 	</div>
 
-	<div class="article-section" data-click="article-video">
-		<h2>Video Tutorial</h2>
-		<div class="video-container">
-			<iframe
-				src="https://www.youtube.com/embed/ECR4oAwocjs"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen
-			>
-			</iframe>
-		</div>
-	</div>
 
 	<div class="article-section" data-click="article-implementation">
 		<h2>How is Transformer Explainer Implemented?</h2>
@@ -596,25 +581,6 @@
 	.article-section {
 		padding-bottom: 2rem;
 	}
-	.architecture-section {
-		padding-top: 1rem;
-	}
-	.video-container {
-		position: relative;
-		padding-bottom: 56.25%; /* 16:9 aspect ratio */
-		height: 0;
-		overflow: hidden;
-		max-width: 100%;
-		background: #000;
-	}
-
-	.video-container iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
 
 	#description {
 		padding-bottom: 3rem;
@@ -683,19 +649,8 @@
 		line-height: 1.6;
 	}
 
-	#description small {
-		font-size: 0.8rem;
-	}
-
 	#description ol li img {
 		vertical-align: middle;
-	}
-
-	#description .video-link {
-		color: theme('colors.blue.600');
-		cursor: pointer;
-		font-weight: normal;
-		text-decoration: none;
 	}
 
 	#description ul {
@@ -704,13 +659,11 @@
 		margin-bottom: 1rem;
 	}
 
-	#description a:hover,
-	#description .video-link:hover {
+	#description a:hover {
 		text-decoration: underline;
 	}
 
-	.figure,
-	.video {
+	.figure {
 		width: 100%;
 		display: flex;
 		flex-direction: column;

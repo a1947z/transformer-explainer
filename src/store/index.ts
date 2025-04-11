@@ -103,6 +103,10 @@ export const tooltip = writable();
 export const isMobile = readable(detectDevice());
 
 function detectDevice() {
-	const userAgent = navigator.userAgent.toLowerCase();
-	return /android|iphone|ipad|ipod/i.test(userAgent);
+    if (typeof window === 'undefined' || typeof navigator === 'undefined') {
+        // 如果在 SSR 环境中，返回一个默认值
+        return false;
+    }
+    const userAgent = navigator.userAgent.toLowerCase();
+    return /android|iphone|ipad|ipod/i.test(userAgent);
 }
