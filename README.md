@@ -1,3 +1,27 @@
+# 本地调试
+
+- 修改svelte.confg.js中
+```
+		adapter: adapter({
+			// pages: 'build',
+			// assets: 'build',
+			pages: 'public',
+			assets: 'public',	
+```
+
+- 运行 npm run build
+会产生一个文件public
+
+- 将 models下的文件复制到public，否则页面会自动从huggingface上下载gpt2的tokenlizer
+
+- 运行
+
+```
+ docker run --rm -v $(pwd -W)/public:/usr/share/nginx/html -v $(pwd -W)/nginx.conf:/etc/nginx/conf.d/default.conf -p 5004:80 nginx:alpine
+```
+- 运行过程中会下载600M左右的gpt2 onnx
+
+
 # Transformer Explainer: Interactive Learning of Text-Generative Models
 
 Transformer Explainer is an interactive visualization tool designed to help anyone learn how Transformer-based models like GPT work. It runs a live GPT-2 model right in your browser, allowing you to experiment with your own text and observe in real time how internal components and operations of the Transformer work together to predict the next tokens. Try Transformer Explainer at http://poloclub.github.io/transformer-explainer and watch a demo video on YouTube https://youtu.be/TFUc41G2ikY.<br/><br/>
